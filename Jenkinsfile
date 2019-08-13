@@ -7,6 +7,7 @@ pipeline {
             steps {
                 
                     bat 'mvn clean compile'
+                bat 'sleep2'
                 
             }
         }
@@ -16,6 +17,7 @@ pipeline {
             steps {
                 
                     bat 'mvn test'
+                bat 'sleep2'
                
             }
         }
@@ -25,7 +27,7 @@ pipeline {
             steps {
               
                     bat 'mvn deploy'
-               
+               bat 'sleep2'
             }
         }
     }
