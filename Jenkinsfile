@@ -1,36 +1,32 @@
 pipeline {
     agent any
-
+  tools {
+                    maven '3.5.0'
+                   jdk 'jdk8'
+                }
+    
     stages {
         stage ('Compile Stage') {
 
             steps {
-                tools {
-                    maven '<3.5.0>'
-                   
-                }
-                 sh 'mvn clean compile'
+              
+                 bat 'mvn clean compile'
             }
         }
 
         stage ('Testing Stage') {
 
             steps {
-                tools{
-                      maven '<3.5.0>'
-                }
-                sh 'mvn test'
+               
+               bat 'mvn test'
             }
         }
 
 
         stage ('Deployment Stage') {
             steps {
-                tools {
-                      maven '<3.5.0>'
-                    
-                }
-                sh 'mvn deploy'
+               
+                bat 'mvn deploy'
             }
         }
     }
